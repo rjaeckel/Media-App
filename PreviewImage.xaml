@@ -7,24 +7,61 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
-    <!--<Grid>
-        <StackPanel>
-            <Button Content="Button" Click="Button_Click"/>
-            <Image x:Name="MyImage" PointerEntered="preview_hover" PointerExited="preview_out"/>
-        </StackPanel> 
-    </Grid>
-    -->
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="36"/>
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <ScrollViewer x:Name="grid_scroll">
-            <VariableSizedWrapGrid x:Name="TheGrid" Orientation="Horizontal" ItemHeight="180" ItemWidth="320" SizeChanged="grid_sizeChanged" />
+        <!-- Begin Menu -->
+        <Grid x:Name="AppTitleBar" Background="CadetBlue" Height="32" VerticalAlignment="Center" Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="36" />
+                <ColumnDefinition Width="60" />
+                <ColumnDefinition Width="50" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Image Source="Assets/Square44x44Logo.targetsize-32.png" 
+                Grid.Column="0"
+                HorizontalAlignment="Left"
+                Width="32" Height="32" />
+            <TextBlock x:Name="AppTitleTextBlock"
+                Grid.Column="1" VerticalAlignment="Center"
+                Text="Media App" /> 
+            <ProgressBar x:Name="PreviewProgress"
+                Grid.Column="3"
+                IsIndeterminate="true"
+                Width="190" Height="7"
+                Background="Black"
+                Foreground="Aqua"/>
+            <ProgressBar x:Name="PreviewProgreSS"
+                Grid.Column="3"
+                Width="190" Height="5"
+                Background="Transparent"
+                Foreground="White"
+                IsIndeterminate="True"/>       
+            <Grid Margin="10 0" Grid.Column="4" HorizontalAlignment="Left">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40" />
+                    <ColumnDefinition Width="36" />
+                    <ColumnDefinition Width="40" />
+                </Grid.ColumnDefinitions>
+                <Button x:Name="imgMinus" Grid.Column="0">[-]</Button>
+                <TextBlock x:Name="imgCount"  Grid.Column="1" Text="6" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Button x:Name="imgPlus" Grid.Column="2">[+]</Button>
+            </Grid>
+        </Grid>
+        <!-- End Menu -->
+
+        <ScrollViewer x:Name="grid_scroll" Grid.Row="1">
+            <VariableSizedWrapGrid x:Name="TheGrid"
+                Orientation="Horizontal" ItemHeight="180" ItemWidth="320"
+                SizeChanged="Grid_Size_Changed" />
         </ScrollViewer>
-        <!--<Popup/>-->
-        <MediaPlayerElement x:Name="ThePlayer" AreTransportControlsEnabled="True" IsFullWindow="True" KeyDown="player_keydown" DoubleTapped="player_doubletapped"/>
+        <MediaPlayerElement x:Name="ThePlayer" Grid.Row="1"
+            AreTransportControlsEnabled="True" IsFullWindow="True"
+            KeyDown="Player_Keydown" DoubleTapped="Player_Doubletapped"/>
         
     </Grid>
 </Page>

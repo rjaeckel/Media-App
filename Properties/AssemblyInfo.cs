@@ -1,17 +1,17 @@
-﻿using System.Reflection;
-using System.Runtime.CompilerServices;
+﻿using System.Resources;
+using System.Reflection;
 using System.Runtime.InteropServices;
 
 // Allgemeine Informationen über eine Assembly werden über die folgenden 
 // Attribute gesteuert. Ändern Sie diese Attributwerte, um die Informationen zu ändern,
 // die einer Assembly zugeordnet sind.
 [assembly: AssemblyTitle("Media App")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Video Player")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("out-sourced.net")]
 [assembly: AssemblyProduct("Media App")]
-[assembly: AssemblyCopyright("Copyright ©  2021")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCopyright("Copyright © 2024")]
+[assembly: AssemblyTrademark("Out-Sourced")]
 [assembly: AssemblyCulture("")]
 
 // Versionsinformationen für eine Assembly bestehen aus den folgenden vier Werten:
@@ -27,3 +27,4 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
 [assembly: ComVisible(false)]
+[assembly: NeutralResourcesLanguage("de")]
